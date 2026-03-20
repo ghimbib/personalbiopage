@@ -1,0 +1,85 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog — Bibek Ghimire" description="Thoughts on AI, product management, and building in public.">
+  <Nav />
+  <main class="pt-32 pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="mb-16" data-animate>
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-accent font-mono text-sm font-bold">blog</span>
+          <span class="h-px bg-border flex-1"></span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Lessons from building<span class="gradient-text">.</span>
+        </h1>
+        <p class="text-text-secondary text-lg max-w-2xl">
+          What I'm learning about AI agents, product management, and shipping software. 
+          Each article is a lesson I paid for so you don't have to.
+        </p>
+      </div>
+
+      <!-- Posts -->
+      <div class="space-y-8">
+        {posts.map((post, i) => (
+          <a 
+            href={`/blog/${post.id.replace(/\.md$/, '')}`}
+            class="block group"
+            data-animate
+            data-delay={String(i * 100 + 100)}
+          >
+            <article class="bg-bg-card border border-border rounded-xl overflow-hidden card-hover transition-all">
+              {post.data.image && (
+                <div class="aspect-[5/2] overflow-hidden">
+                  <img 
+                    src={post.data.image} 
+                    alt={post.data.title}
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+              <div class="p-6 sm:p-8">
+                <div class="flex items-center gap-3 mb-3">
+                  <time class="text-text-muted text-sm font-mono">
+                    {post.data.date.toLocaleDateString('en-US', { 
+                      year: 'numeric', month: 'long', day: 'numeric' 
+                    })}
+                  </time>
+                  <span class="text-border">·</span>
+                  <div class="flex gap-2">
+                    {post.data.tags.slice(0, 3).map(tag => (
+                      <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <h2 class="text-xl sm:text-2xl font-bold text-text-primary group-hover:text-accent transition-colors mb-2">
+                  {post.data.title}
+                </h2>
+                <p class="text-text-secondary text-sm sm:text-base leading-relaxed">
+                  {post.data.description}
+                </p>
+                <div class="mt-4 flex items-center gap-2 text-accent text-sm font-medium">
+                  <span>Read article</span>
+                  <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

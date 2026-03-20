@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { id: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout 
+  title={`${post.data.title} — Bibek Ghimire`}
+  description={post.data.description}
+>
+  <Nav />
+  <main class="pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+      <!-- Back link -->
+      <a 
+        href="/blog" 
+        class="inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors text-sm font-mono mb-8"
+        data-hover
+      >
+        <span>←</span>
+        <span>Back to blog</span>
+      </a>
+
+      <!-- Hero image -->
+      {post.data.image && (
+        <div class="aspect-[5/2] rounded-xl overflow-hidden mb-8" data-animate>
+          <img 
+            src={post.data.image} 
+            alt={post.data.title}
+            class="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
+      <!-- Article header -->
+      <header class="mb-12" data-animate data-delay="100">
+        <div class="flex items-center gap-3 mb-4">
+          <time class="text-text-muted text-sm font-mono">
+            {post.data.date.toLocaleDateString('en-US', { 
+              year: 'numeric', month: 'long', day: 'numeric' 
+            })}
+          </time>
+          <span class="text-border">·</span>
+          <div class="flex gap-2">
+            {post.data.tags.map(tag => (
+              <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4">
+          {post.data.title}
+        </h1>
+        <p class="text-text-secondary text-lg">
+          {post.data.description}
+        </p>
+        <div class="flex items-center gap-3 mt-6 pt-6 border-t border-border">
+          <div>
+            <p class="text-text-primary text-sm font-medium">Bibek Ghimire</p>
+            <p class="text-text-muted text-xs">Product Leader & Builder</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Article content -->
+      <article class="prose">
+        <Content />
+      </article>
+
+      <!-- Footer -->
+      <div class="mt-16 pt-8 border-t border-border" data-animate>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex gap-2">
+            {post.data.tags.map(tag => (
+              <span class="text-xs px-2 py-0.5 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
+                #{tag}
+              </span>
+            ))}
+          </div>
+          <a 
+            href="/blog" 
+            class="text-accent text-sm font-medium hover:underline"
+            data-hover
+          >
+            ← More articles
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  /* Blog prose styling - using plain CSS to avoid Tailwind v4 @apply issues */
+  .prose { color: var(--color-text-secondary); line-height: 1.75; }
+  .prose h2 { font-size: 1.5rem; font-weight: 700; color: var(--color-text-primary); margin-top: 3rem; margin-bottom: 1rem; }
+  .prose h3 { font-size: 1.25rem; font-weight: 600; color: var(--color-text-primary); margin-top: 2rem; margin-bottom: 0.75rem; }
+  .prose p { font-size: 1.0625rem; margin-bottom: 1.5rem; line-height: 1.75; }
+  .prose ul, .prose ol { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+  .prose ul li { list-style-type: disc; font-size: 1.0625rem; line-height: 1.75; margin-bottom: 0.5rem; }
+  .prose ol li { list-style-type: decimal; font-size: 1.0625rem; line-height: 1.75; margin-bottom: 0.5rem; }
+  .prose strong { color: var(--color-text-primary); font-weight: 600; }
+  .prose blockquote { border-left: 4px solid var(--color-accent); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: var(--color-text-muted); }
+  .prose code { font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; background: var(--color-bg-elevated); padding: 0.125rem 0.375rem; border-radius: 0.25rem; color: var(--color-accent); }
+  .prose pre { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 0.75rem; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; }
+  .prose pre code { background: transparent; padding: 0; }
+  .prose a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; }
+  .prose a:hover { color: var(--color-accent-hover); }
+  .prose img { border-radius: 0.75rem; margin: 2rem 0; }
+  .prose hr { border-color: var(--color-border); margin: 2.5rem 0; }
+  .prose table { width: 100%; font-size: 0.875rem; margin: 1.5rem 0; }
+  .prose th { background: var(--color-bg-card); color: var(--color-text-primary); font-weight: 600; padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--color-border); }
+  .prose td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--color-border); }
+</style>
