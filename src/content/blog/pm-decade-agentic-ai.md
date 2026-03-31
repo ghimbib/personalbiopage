@@ -7,6 +7,8 @@ tags: ["AI", "AgenticAI", "ProductManagement", "BuildInPublic"]
 draft: false
 ---
 
+---
+
 ## The mistake I'd already made before
 
 The most expensive mistake I made running an AI fleet was one I'd made before, years earlier, in sprint planning. I dispatched two agents in parallel on work that had a hidden dependency. Product built a go-to-market strategy while Research was still running competitive intelligence.
