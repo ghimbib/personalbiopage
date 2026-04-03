@@ -28,17 +28,6 @@ const links = [
       ))}
     </div>
 
-    <!-- Theme toggle -->
-    <button
-      id="theme-toggle"
-      class="p-2 rounded-lg transition-colors duration-200 cursor-pointer"
-      style="background: var(--bg-surface); color: var(--text-primary); border: 1px solid var(--border);"
-      aria-label="Toggle theme"
-      data-hover
-    >
-      <span id="theme-icon">☀️</span>
-    </button>
-
     <!-- Mobile toggle -->
     <button
       id="menu-toggle"
@@ -113,27 +102,7 @@ const links = [
 </script>
 
 <script>
-  function initThemeToggle() {
-    const toggle = document.getElementById('theme-toggle');
-    const icon = document.getElementById('theme-icon');
-    if (!toggle || !icon) return;
-
-    function updateIcon() {
-      const current = document.documentElement.getAttribute('data-theme');
-      icon.textContent = current === 'dark' ? '☀️' : '🌙';
-    }
-
-    toggle.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateIcon();
-    });
-
-    updateIcon();
-  }
-
-  initThemeToggle();
-  document.addEventListener('astro:after-swap', initThemeToggle);
+  // Theme locked to dark mode
+  document.documentElement.setAttribute('data-theme', 'dark');
+  localStorage.setItem('theme', 'dark');
 </script>
