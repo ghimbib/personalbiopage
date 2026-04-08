@@ -51,6 +51,21 @@ npm run build
 npm run preview
 ```
 
+## Newsletter setup
+
+The site includes a reusable subscribe form in the footer and at the bottom of each blog post.
+
+It now posts directly to Buttondown's hosted embed endpoint:
+
+```text
+https://buttondown.com/api/emails/embed-subscribe/bibekgh
+```
+
+Notes:
+- no local API route or Buttondown API key is required for the current v1 flow
+- the form keeps the site's styling, then hands off subscription confirmation to Buttondown in a small popup window
+- local dev and builds do not need newsletter-specific env vars
+
 ## Key files
 
 - `src/pages/index.astro` — homepage assembly

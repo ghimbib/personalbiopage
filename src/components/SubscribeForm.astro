@@ -1,0 +1,175 @@
+---
+interface Props {
+  compact?: boolean;
+  className?: string;
+}
+
+const {
+  compact = false,
+  className = '',
+} = Astro.props;
+
+const formId = compact ? 'compact' : 'full';
+const action = 'https://buttondown.com/api/emails/embed-subscribe/bibekgh';
+---
+
+<section class={`subscribe-card ${compact ? 'subscribe-card--compact' : ''} ${className}`.trim()}>
+  <div class="subscribe-card__copy">
+    <p class="subscribe-card__eyebrow">Newsletter</p>
+    <h2 class="subscribe-card__title">Get new essays in your inbox</h2>
+    <p class="subscribe-card__helper">No spam. Just new posts and occasional useful notes.</p>
+  </div>
+
+  <form class="subscribe-form" action={action} method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/bibekgh', 'popupwindow')">
+    <label class="sr-only" for={`subscribe-email-${formId}`}>Email address</label>
+    <div class="subscribe-form__row">
+      <input
+        id={`subscribe-email-${formId}`}
+        name="email"
+        type="email"
+        inputmode="email"
+        autocomplete="email"
+        placeholder="you@example.com"
+        required
+        class="subscribe-form__input"
+      />
+      <button type="submit" class="subscribe-form__button" data-hover>
+        Subscribe
+      </button>
+    </div>
+    <p class="subscribe-form__status">
+      You’ll confirm on Buttondown in a small window.
+    </p>
+  </form>
+</section>
+
+<style>
+  .subscribe-card {
+    display: grid;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    background: color-mix(in srgb, var(--color-bg-card) 88%, transparent);
+  }
+
+  .subscribe-card--compact {
+    padding: 1.25rem;
+  }
+
+  .subscribe-card__eyebrow {
+    margin: 0 0 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-accent);
+  }
+
+  .subscribe-card__title {
+    margin: 0;
+    font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+    line-height: 1.15;
+    color: var(--color-text-primary);
+    font-weight: 700;
+  }
+
+  .subscribe-card__helper {
+    margin: 0.75rem 0 0;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+
+  .subscribe-form {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .subscribe-form__row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .subscribe-form__input {
+    width: 100%;
+    min-height: 3rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.875rem;
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    padding: 0.875rem 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .subscribe-form__input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent);
+  }
+
+  .subscribe-form__button {
+    min-height: 3rem;
+    border: 0;
+    border-radius: 0.875rem;
+    padding: 0.875rem 1.25rem;
+    background: var(--color-accent);
+    color: #081310;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+  }
+
+  .subscribe-form__button:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: var(--color-accent-hover);
+  }
+
+  .subscribe-form__button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+  }
+
+  .subscribe-form__status {
+    min-height: 1.5rem;
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+  }
+
+  .subscribe-form__status[data-state='success'] {
+    color: var(--color-accent);
+  }
+
+  .subscribe-form__status[data-state='error'] {
+    color: #e06c75;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (min-width: 768px) {
+    .subscribe-card {
+      grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
+      align-items: center;
+    }
+
+    .subscribe-form__row {
+      flex-direction: row;
+      align-items: stretch;
+    }
+
+    .subscribe-form__button {
+      flex-shrink: 0;
+    }
+  }
+</style>
