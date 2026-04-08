@@ -146,7 +146,9 @@ const links = [
         const current = document.documentElement.getAttribute('data-theme');
         const next = current === 'dark' ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', next);
+        document.documentElement.style.colorScheme = next;
         localStorage.setItem('theme', next);
+        window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: next } }));
         updateIcon();
       });
       toggle.dataset.themeBound = 'true';
@@ -156,5 +158,6 @@ const links = [
   }
 
   initThemeToggle();
+  window.addEventListener('themechange', initThemeToggle);
   document.addEventListener('astro:after-swap', initThemeToggle);
 </script>
