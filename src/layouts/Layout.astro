@@ -20,10 +20,32 @@ const siteUrl = "https://bibekghimire.com";
   <head>
     <script is:inline>
       (function(){
-        var s=localStorage.getItem('theme');
-        var d=window.matchMedia('(prefers-color-scheme:dark)').matches;
-        var t=s||(d?'dark':'light');
-        document.documentElement.setAttribute('data-theme',t);
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function getPreferredTheme() {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') return saved;
+          return media.matches ? 'dark' : 'light';
+        }
+
+        function applyTheme() {
+          var theme = getPreferredTheme();
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.style.colorScheme = theme;
+          window.dispatchEvent(new CustomEvent('themechange', { detail: { theme: theme } }));
+        }
+
+        window.__getPreferredTheme = getPreferredTheme;
+        window.__applyTheme = applyTheme;
+
+        applyTheme();
+
+        media.addEventListener('change', function() {
+          var saved = localStorage.getItem('theme');
+          if (saved !== 'light' && saved !== 'dark') {
+            applyTheme();
+          }
+        });
       })();
     </script>
     <meta charset="utf-8" />
@@ -43,9 +65,7 @@ const siteUrl = "https://bibekghimire.com";
 
     <script is:inline>
       document.addEventListener('astro:after-swap', function(){
-        var s=localStorage.getItem('theme');
-        var d=window.matchMedia('(prefers-color-scheme:dark)').matches;
-        document.documentElement.setAttribute('data-theme', s||(d?'dark':'light'));
+        if (window.__applyTheme) window.__applyTheme();
       });
     </script>
 
