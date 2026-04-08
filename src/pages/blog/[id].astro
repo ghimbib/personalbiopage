@@ -2,7 +2,6 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
-import SubscribeForm from '../../components/SubscribeForm.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -81,10 +80,6 @@ const { Content } = await render(post);
       <article class="prose">
         <Content />
       </article>
-
-      <div class="mt-16" data-animate>
-        <SubscribeForm className="blog-subscribe" />
-      </div>
 
       <!-- Footer -->
       <div class="mt-16 pt-8 border-t border-border" data-animate>
