@@ -1,0 +1,65 @@
+---
+const wins = [
+  {
+    value: '$275M',
+    label: 'Portfolio Managed',
+    detail: 'Across industrial, digital, and connected product lines.'
+  },
+  {
+    value: '385%',
+    label: 'Revenue Growth',
+    detail: 'Scaled revenue in 12 months through product and commercial execution.'
+  },
+  {
+    value: '7',
+    label: 'Global Regions',
+    detail: 'Improved launches and workflows across seven global regions.'
+  },
+  {
+    value: 'Multi-product',
+    label: 'Platforms Led',
+    detail: 'Apps, portals, CRM and workflow systems, eCommerce tools, and connected products.'
+  }
+];
+---
+
+<section id="wins" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="section-label" data-animate>
+      <span class="section-number">02</span>
+      <span class="section-line"></span>
+      <span class="section-label-text">Selected Wins</span>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4 text-center sm:text-left" data-animate data-delay="100">
+      Proof, not posture<span class="gradient-text">.</span>
+    </h2>
+    <p class="text-text-secondary text-lg mb-12 max-w-3xl text-center sm:text-left" data-animate data-delay="150">
+      A few concrete outcomes that show the kind of work I’ve led.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {wins.map((win, i) => (
+        <div data-animate data-delay={String(i * 100 + 200)} class="bg-bg-card border border-border rounded-xl p-6 card-hover">
+          <p class="text-accent font-mono text-2xl sm:text-3xl font-bold mb-2">{win.value}</p>
+          <h3 class="text-text-primary text-base sm:text-lg font-semibold mb-2">{win.label}</h3>
+          <p class="text-text-secondary text-sm leading-relaxed">{win.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <div data-animate data-delay="650" class="mt-6 bg-bg-card border border-border rounded-xl p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div>
+        <p class="text-text-primary font-medium">Want the deeper story?</p>
+        <p class="text-text-secondary text-sm mt-1">Happy to share a resume or talk through case studies in more detail.</p>
+      </div>
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 px-5 py-3 border border-border text-text-secondary rounded-lg hover:border-accent hover:text-accent transition-all text-sm sm:text-base"
+        data-hover
+      >
+        Request details
+      </a>
+    </div>
+  </div>
+</section>
