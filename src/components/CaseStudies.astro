@@ -1,0 +1,66 @@
+---
+import { caseStudies } from '../data/caseStudies';
+---
+
+<section id="case-studies" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="section-label" data-animate>
+      <span class="section-number">04</span>
+      <span class="section-line"></span>
+      <span class="section-label-text">Case Studies</span>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4 text-center sm:text-left" data-animate data-delay="100">
+      A little more depth<span class="gradient-text">.</span>
+    </h2>
+    <p class="text-text-secondary text-lg mb-12 max-w-3xl text-center sm:text-left" data-animate data-delay="150">
+      Two short case studies that show how I think, where I led, and what changed.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      {caseStudies.map((study, i) => (
+        <a
+          href={`/work/${study.slug}`}
+          data-animate
+          data-delay={String(i * 100 + 200)}
+          class="group bg-bg-card border border-border rounded-xl p-6 card-hover block"
+        >
+          <div class="flex items-center justify-between gap-4 mb-4">
+            <span class="text-xs px-2.5 py-1 rounded-full bg-accent-subtle text-accent border border-accent/20 font-mono">
+              {study.company}
+            </span>
+            <span class="text-text-muted text-xs font-mono">{study.period}</span>
+          </div>
+
+          <h3 class="text-lg sm:text-xl font-semibold text-text-primary mb-3 group-hover:text-accent transition-colors">
+            {study.title}
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed mb-5">
+            {study.teaser}
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-5">
+            {study.tags.map((tag) => (
+              <span class="text-xs text-text-muted font-mono">{tag}</span>
+            ))}
+          </div>
+
+          <div class="inline-flex items-center gap-2 text-accent text-sm font-medium">
+            <span>Read case study</span>
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div data-animate data-delay="500" class="mt-6 flex justify-start">
+      <a
+        href="/work"
+        class="inline-flex items-center gap-2 px-5 py-3 border border-border text-text-secondary rounded-lg hover:border-accent hover:text-accent transition-all text-sm sm:text-base"
+        data-hover
+      >
+        View all case studies
+      </a>
+    </div>
+  </div>
+</section>
