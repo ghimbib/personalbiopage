@@ -1,0 +1,35 @@
+---
+interface Props {
+  title?: string;
+  helper?: string;
+  buttonLabel?: string;
+  className?: string;
+}
+
+const {
+  title = 'Get new essays in your inbox.',
+  helper = 'Occasional writing on product, systems, AI, and what I’m learning while building.',
+  buttonLabel = 'Subscribe',
+  className = '',
+} = Astro.props;
+---
+
+<section class={`bg-bg-card border border-border rounded-2xl p-6 sm:p-8 ${className}`.trim()}>
+  <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+    <div class="max-w-2xl">
+      <p class="text-accent text-xs font-mono uppercase tracking-wider mb-2">Newsletter</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">{title}</h2>
+      <p class="text-text-secondary mt-3 leading-relaxed">{helper}</p>
+    </div>
+    <div>
+      <a
+        href="/subscribe"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg font-medium rounded-lg hover:bg-accent-hover transition-all"
+        data-hover
+      >
+        <span>{buttonLabel}</span>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>

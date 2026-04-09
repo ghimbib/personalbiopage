@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
-import SubscribeForm from '../../components/SubscribeForm.astro';
+import SubscribeCTA from '../../components/SubscribeCTA.astro';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog'))
@@ -82,16 +82,7 @@ const posts = (await getCollection('blog'))
       </div>
 
       <section id="subscribe" class="mt-16" data-animate data-delay="200">
-        <div class="bg-bg-card border border-border rounded-2xl p-6 sm:p-8">
-          <div class="max-w-2xl mb-6">
-            <p class="text-accent text-xs font-mono uppercase tracking-wider mb-2">Newsletter</p>
-            <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">Get new essays in your inbox<span class="gradient-text">.</span></h2>
-            <p class="text-text-secondary mt-3 leading-relaxed">
-              Occasional writing on product, systems, AI, and what I’m learning while building.
-            </p>
-          </div>
-          <SubscribeForm />
-        </div>
+        <SubscribeCTA />
       </section>
     </div>
   </main>
