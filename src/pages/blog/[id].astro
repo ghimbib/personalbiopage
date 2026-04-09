@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
+import SubscribeCTA from '../../components/SubscribeCTA.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -99,6 +100,13 @@ const { Content } = await render(post);
             ← More articles
           </a>
         </div>
+      </div>
+
+      <div class="mt-12" data-animate data-delay="100">
+        <SubscribeCTA
+          title="Like this kind of writing?"
+          helper="Subscribe for new essays and occasional notes on product, systems, AI, and what I’m learning while building."
+        />
       </div>
     </div>
   </main>
