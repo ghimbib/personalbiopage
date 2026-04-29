@@ -18,6 +18,8 @@ Doko Dash is a browser game. Phaser, Vite, Bir, Asha, rice, puddles, touch contr
 
 That is already a much better sentence than "I optimized a process".
 
+It also started for a very simple reason: my nephews asked for a Nepali game.
+
 The part I like is how unserious it sounds from the outside and how precise it gets the second you touch it.
 
 Are the puddles too square. Is Bir meaningfully sturdier than Asha. Does hero lock make the run feel cleaner. Should food heal health or stay as power. Does the mobile results panel feel satisfying or just busy. Is Everest hard in a fun way or hard in an "I hate the person who made this" way.
