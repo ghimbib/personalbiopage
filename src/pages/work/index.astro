@@ -3,11 +3,29 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import { caseStudies } from '../../data/caseStudies';
+import { itemListSchema, webPageSchema } from '../../utils/seo';
+
+const title = 'Case Studies — Bibek Ghimire';
+const description = 'Short case studies on product, program, growth, analytics, and systems work across industrial, climate tech, and energy contexts.';
+const workJsonLd = [
+  webPageSchema({ path: '/work/', title, description }),
+  itemListSchema({
+    name: 'Bibek Ghimire case studies',
+    path: '/work/',
+    items: caseStudies.map((study) => ({
+      name: study.title,
+      url: `/work/${study.slug}/`,
+      description: study.teaser,
+    })),
+  }),
+];
 ---
 
 <Layout
-  title="Case Studies — Bibek Ghimire"
-  description="Short case studies on product, program, GTM, and analytics leadership across industrial systems, climate tech, and connected products."
+  title={title}
+  description={description}
+  canonicalPath="/work/"
+  jsonLd={workJsonLd}
 >
   <Nav />
   <main class="pt-32 pb-20 px-6">

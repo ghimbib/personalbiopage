@@ -11,9 +11,10 @@ import Skills from '../components/Skills.astro';
 import Hobbies from '../components/Hobbies.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import { homepageJsonLd } from '../utils/seo';
 ---
 
-<Layout>
+<Layout canonicalPath="/" type="profile" jsonLd={homepageJsonLd()}>
   <Nav />
   <main>
     <Hero />

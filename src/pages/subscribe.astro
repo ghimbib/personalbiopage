@@ -3,11 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import SubscribeForm from '../components/SubscribeForm.astro';
+import { webPageSchema } from '../utils/seo';
+
+const title = 'Subscribe — Bibek Ghimire';
+const description = 'Subscribe for occasional essays from Bibek Ghimire on product work, AI systems, practical building, and operating through messy technical spaces.';
 ---
 
 <Layout
-  title="Subscribe — Bibek Ghimire"
-  description="Subscribe for new essays and occasional notes on product, systems, and AI."
+  title={title}
+  description={description}
+  canonicalPath="/subscribe/"
+  jsonLd={webPageSchema({ path: '/subscribe/', title, description })}
 >
   <Nav />
   <main class="pt-32 pb-20 px-6">

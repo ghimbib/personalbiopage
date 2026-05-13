@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 import { caseStudies } from '../../data/caseStudies';
+import { articleSchema, webPageSchema } from '../../utils/seo';
 
 export function getStaticPaths() {
   return caseStudies.map((study) => ({
@@ -12,11 +13,25 @@ export function getStaticPaths() {
 }
 
 const { study } = Astro.props;
+const studyPath = `/work/${study.slug}/`;
+const studyJsonLd = [
+  webPageSchema({ path: studyPath, title: `${study.title} — Bibek Ghimire`, description: study.teaser }),
+  articleSchema({
+    path: studyPath,
+    title: study.title,
+    description: study.summary,
+    keywords: study.tags,
+    section: study.company,
+  }),
+];
 ---
 
 <Layout
   title={`${study.title} — Bibek Ghimire`}
   description={study.teaser}
+  canonicalPath={studyPath}
+  type="article"
+  jsonLd={studyJsonLd}
 >
   <Nav />
   <main class="pt-32 pb-20 px-6">
