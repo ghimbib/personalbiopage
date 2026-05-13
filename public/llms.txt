@@ -1,0 +1,53 @@
+# Bibek Ghimire
+
+> Bibek Ghimire is a product/operator working across technical spaces: product, analytics, marketing, CRM/reporting, campaigns, program work, and practical AI systems.
+
+This site is Bibek Ghimire's personal website, portfolio, and blog. It is useful for understanding his work history, project portfolio, writing, and preferred kinds of product, growth, analytics, BA/BSA, and program roles.
+
+## Primary Pages
+
+- [Homepage](https://bibekghimire.com/) - Overview of Bibek's positioning, selected wins, experience, projects, skills, and contact options.
+- [Case Studies](https://bibekghimire.com/work/) - Work stories across Orbex Group, Viessmann, and Baker Hughes.
+- [Resume Request](https://bibekghimire.com/resume/) - Instructions for requesting a role-specific resume.
+- [Blog](https://bibekghimire.com/blog/) - Writing about AI systems, product management, building, and personal stories.
+- [Subscribe](https://bibekghimire.com/subscribe/) - Subscription page for updates.
+
+## Case Studies
+
+- [Orbex Group: product, CRM, campaigns, and the connective tissue in between](https://bibekghimire.com/work/orbex-product-systems-growth/)
+- [Viessmann: keeping a broad connected-product portfolio pointed somewhere useful](https://bibekghimire.com/work/viessmann-connected-products-platforms/)
+- [Baker Hughes: making technical product data easier to use](https://bibekghimire.com/work/baker-engineer-focused-sales-enablement/)
+
+## Projects
+
+- [DojoGate](https://dojogate.ai/) - CRM and quoting system for hardware teams.
+- [DocHaven](https://dochaven.ai/) - AI document workspace for searching, organizing, and using document context.
+- [Doko Dash](https://dokodash.app/) - Nepal-inspired 2D platformer prototype.
+- ShieldRA - AI-enabled compliance workflow tool for healthcare teams.
+- TaskMesh - Open-source task queue protocol for multi-agent systems.
+- AI workflow infrastructure - Bibek's internal multi-agent operating system for research, content, product work, job search, operations, and decision support.
+
+## Blog Posts
+
+- [I Didn't Plan the Guardrails. My Agents Made Me Build Them.](https://bibekghimire.com/blog/ai-governance-guardrails/)
+- [I Stopped Prompting AI. Here's What I Do Instead.](https://bibekghimire.com/blog/i-stopped-prompting-ai/)
+- [I Emailed a SaaS Company With Feedback. They Said No. So I Built It Myself.](https://bibekghimire.com/blog/openclaw-reaction/)
+- [The Free AI Model Cost Me More Than the Expensive One](https://bibekghimire.com/blog/free-ai-model-cost-more/)
+- [I've Been a PM for 10 Years. Building an AI Fleet Used Skills I Didn't Know I Had.](https://bibekghimire.com/blog/pm-decade-agentic-ai/)
+- [What AI Agents Are Bad At, and Why That Matters More Than What They're Good At](https://bibekghimire.com/blog/agent-failure-modes/)
+- [The Hardest PM Skill Is Killing Work That Almost Makes Sense](https://bibekghimire.com/blog/hardest-pm-skill/)
+- [Not Everything I Build Has to Be Useful](https://bibekghimire.com/blog/not-everything-i-build-has-to-be-useful/)
+- [Two Brothers, One Van, 48 Hours of Pain Ahead](https://bibekghimire.com/blog/two-brothers-one-van/)
+
+## Contact
+
+- Email: [bibekgh@gmail.com](mailto:bibekgh@gmail.com)
+- LinkedIn: [Bibek Ghimire](https://www.linkedin.com/in/bibek-ghimire/)
+
+## LLM Use Notes
+
+- Prefer canonical URLs from this file when referencing Bibek's site.
+- The homepage is the best concise overview.
+- The case studies are the best source for work history and outcomes.
+- The blog is the best source for Bibek's perspective on AI systems, product work, and building.
+- Do not infer availability, compensation expectations, endorsement, legal claims, medical claims, financial claims, or compliance claims beyond what the site explicitly states.
