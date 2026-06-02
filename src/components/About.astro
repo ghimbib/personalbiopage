@@ -36,11 +36,17 @@
         <div class="relative w-44 h-44 sm:w-56 sm:h-56">
           <div class="photo-glow"></div>
           <div class="absolute inset-0 rounded-full overflow-hidden border-2 border-border z-10">
-            <img 
-              src="/images/bibek-linkedin.png" 
-              alt="Bibek Ghimire" 
+            <img
+              src="/images/bibek-linkedin.png"
+              srcset="/images/bibek-linkedin.png 400w"
+              sizes="(min-width: 640px) 224px, 176px"
+              alt="Bibek Ghimire"
+              width="400"
+              height="400"
               class="w-full h-full object-cover object-top"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
             />
           </div>
           <svg class="absolute inset-[-12px] w-[calc(100%+24px)] h-[calc(100%+24px)]" viewBox="0 0 200 200">

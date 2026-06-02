@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import SubscribeCTA from '../../components/SubscribeCTA.astro';
 import { getCollection } from 'astro:content';
 import { itemListSchema, webPageSchema, websiteSchema } from '../../utils/seo';
+import { getImageMeta, getImageSrcset } from '../../utils/images';
 
 const posts = (await getCollection('blog'))
   .filter(post => !post.data.draft && !post.data.hidden)
@@ -63,7 +64,7 @@ const blogJsonLd = [
 
 <Layout title={title} description={description} canonicalPath="/blog/" jsonLd={blogJsonLd}>
   <Nav />
-  <main class="pt-24 md:pt-32 pb-16 md:pb-20 px-5 sm:px-6">
+  <main id="main-content" class="pt-24 md:pt-32 pb-16 md:pb-20 px-5 sm:px-6">
     <div class="max-w-4xl mx-auto">
       <div class="mb-10 md:mb-16" data-animate>
         <div class="flex items-center gap-4 mb-4">
@@ -88,9 +89,14 @@ const blogJsonLd = [
                       <img
                         src={featuredPost.data.image}
                         alt={featuredPost.data.title}
+                        width={getImageMeta(featuredPost.data.image)?.width}
+                        height={getImageMeta(featuredPost.data.image)?.height}
+                        srcset={getImageSrcset(featuredPost.data.image)}
+                        sizes="(min-width: 640px) 144px, 96px"
                         class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                         style={featuredPost.data.imagePosition ? `object-position: ${featuredPost.data.imagePosition};` : undefined}
                         loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   )}
@@ -157,9 +163,14 @@ const blogJsonLd = [
                         <img 
                           src={post.data.image} 
                           alt={post.data.title}
+                          width={getImageMeta(post.data.image)?.width}
+                          height={getImageMeta(post.data.image)?.height}
+                          srcset={getImageSrcset(post.data.image)}
+                          sizes="(min-width: 896px) 896px, calc(100vw - 40px)"
                           class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                           style={post.data.imagePosition ? `object-position: ${post.data.imagePosition};` : undefined}
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     )}

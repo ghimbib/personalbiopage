@@ -8,6 +8,7 @@ export const DEFAULT_DESCRIPTION =
 export const DEFAULT_IMAGE = '/images/bibek-linkedin.png';
 
 export const PERSON_ID = `${SITE_URL}/#person`;
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 export function absoluteUrl(path = '/') {
@@ -40,6 +41,7 @@ export function personSchema() {
       'https://www.linkedin.com/in/bibek-ghimire/',
       'https://github.com/ghimbib',
     ],
+    worksFor: { '@id': ORGANIZATION_ID },
     knowsAbout: [
       'Product strategy',
       'Growth',
@@ -55,6 +57,23 @@ export function personSchema() {
   };
 }
 
+export function organizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': ORGANIZATION_ID,
+    name: 'Bibek Ghimire',
+    url: SITE_URL,
+    logo: absoluteUrl('/favicon.svg'),
+    image: absoluteUrl(DEFAULT_IMAGE),
+    founder: { '@id': PERSON_ID },
+    sameAs: [
+      'https://www.linkedin.com/in/bibek-ghimire/',
+      'https://github.com/ghimbib',
+    ],
+  };
+}
+
 export function websiteSchema() {
   return {
     '@context': 'https://schema.org',
@@ -64,7 +83,7 @@ export function websiteSchema() {
     name: 'Bibek Ghimire',
     description: DEFAULT_DESCRIPTION,
     inLanguage: 'en-US',
-    publisher: { '@id': PERSON_ID },
+    publisher: { '@id': ORGANIZATION_ID },
   };
 }
 
@@ -98,6 +117,7 @@ export function webPageSchema({
 export function homepageJsonLd() {
   return [
     personSchema(),
+    organizationSchema(),
     websiteSchema(),
     {
       '@context': 'https://schema.org',
@@ -164,7 +184,7 @@ export function articleSchema({
     url,
     image: absoluteUrl(image ?? DEFAULT_IMAGE),
     author: { '@id': PERSON_ID },
-    publisher: { '@id': PERSON_ID },
+    publisher: { '@id': ORGANIZATION_ID },
     mainEntityOfPage: `${url}#webpage`,
     datePublished,
     dateModified: datePublished,
