@@ -5,6 +5,7 @@ import Footer from '../../components/Footer.astro';
 import SubscribeCTA from '../../components/SubscribeCTA.astro';
 import { getCollection, render } from 'astro:content';
 import { articleSchema, webPageSchema } from '../../utils/seo';
+import { getImageMeta, getImageSrcset } from '../../utils/images';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -40,7 +41,7 @@ const postJsonLd = [
   jsonLd={postJsonLd}
 >
   <Nav />
-  <main class="pt-32 pb-20 px-6">
+  <main id="main-content" class="pt-32 pb-20 px-6">
     <div class="max-w-3xl mx-auto">
       <!-- Back link -->
       <a 
@@ -58,8 +59,15 @@ const postJsonLd = [
           <img 
             src={post.data.image} 
             alt={post.data.title}
+            width={getImageMeta(post.data.image)?.width}
+            height={getImageMeta(post.data.image)?.height}
+            srcset={getImageSrcset(post.data.image)}
+            sizes="(min-width: 768px) 768px, calc(100vw - 48px)"
             class="w-full h-full object-cover"
             style={post.data.imagePosition ? `object-position: ${post.data.imagePosition};` : undefined}
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
           />
         </div>
       )}
@@ -146,7 +154,7 @@ const postJsonLd = [
   .prose ol li { list-style-type: decimal; font-size: 1.0625rem; line-height: 1.75; margin-bottom: 0.5rem; }
   .prose strong { color: var(--color-text-primary); font-weight: 600; }
   .prose blockquote { border-left: 4px solid var(--color-accent); padding-left: 1.5rem; margin: 1.5rem 0; font-style: italic; color: var(--color-text-muted); }
-  .prose code { font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; background: var(--color-bg-elevated); padding: 0.125rem 0.375rem; border-radius: 0.25rem; color: var(--color-accent); }
+  .prose code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace; font-size: 0.875rem; background: var(--color-bg-elevated); padding: 0.125rem 0.375rem; border-radius: 0.25rem; color: var(--color-accent); }
   .prose pre { background: var(--color-bg-card); border: 1px solid var(--color-border); border-radius: 0.75rem; padding: 1.25rem; margin: 1.5rem 0; overflow-x: auto; }
   .prose pre code { background: transparent; padding: 0; }
   .prose a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; }
