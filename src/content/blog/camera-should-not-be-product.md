@@ -3,7 +3,7 @@ title: "Safety AI Needs Better Reasons to Look"
 description: "The humane version of physical safety AI is not a bigger screen. It is a smaller, cleaner, more accountable interruption."
 category: "Product Lessons"
 date: 2026-06-15
-image: /images/blog/camera-should-not-be-product/hero-banner.png
+image: /images/blog/camera-should-not-be-product/hero-openai-selected.png
 imagePosition: center
 tags: ["AI", "ProductManagement", "SafetyTech"]
 draft: false
