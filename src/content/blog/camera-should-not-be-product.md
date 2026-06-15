@@ -1,6 +1,6 @@
 ---
-title: "Safety AI Needs Better Reasons to Look"
-description: "The humane version of physical safety AI is not a bigger screen. It is a smaller, cleaner, more accountable interruption."
+title: "The AI Saw a Gun. It Was a Bag of Doritos."
+description: "Safety AI should not be judged by how well it watches. It should be judged by what happens after it thinks it saw something."
 category: "Product Lessons"
 date: 2026-06-15
 image: /images/blog/camera-should-not-be-product/hero-openai-selected.png
