@@ -9,21 +9,25 @@ tags: ["AI", "ProductManagement", "SafetyTech"]
 draft: false
 ---
 
-I recently talked with a company building AI safety tools for senior living and schools, and I kept getting stuck on one word: camera.
+I recently talked with a company building AI safety tools for senior living and schools, and one word kept bothering me: camera.
 
-A camera feels like the product because it is the thing everyone can point at: visible, budgetable, progress bolted to a wall.
+Not because cameras are always wrong. Sometimes seeing sooner matters. In senior living, a delayed check after a fall can change someone's life. In a school, a delayed response to a real threat can be catastrophic.
 
-That is the trap: the camera should not be the product; the accountable interruption should be.
+But "camera" is a dangerous word to build around because it makes the product feel obvious. Put a device on the wall. Detect the thing. Alert a person. Call it safety.
 
-Or more specifically: the product is the moment a tired human gets interrupted for the right reason.
+That skips the part where the product actually succeeds or fails.
 
-That distinction matters because physical safety AI sits in a weird, uncomfortable category. In one room, it can help staff notice a resident is at risk. In another room, the same basic pattern can turn into a suspicion machine pointed at students.
+A useful safety system does not just say, "I saw something." It has to say: this changed, here is why it matters, here is who needs to check, here is what they should know, and here is what happens if I am wrong.
 
-Same category. Similar AI sales pitch. Very different escalation risk.
+That is the part I care about. Not the watching. The handoff.
 
-## Senior living is the humane case
+In senior living, that handoff can be humane. In schools, the same basic pattern can become a suspicion machine if the workflow turns a model trigger into a consequence before anyone has enough context to make a real call.
 
-Start with senior living because the problem is real and not theoretical.
+That is the line this category has to walk.
+
+## Senior living is the best-case version
+
+In senior living, the hard part is not convincing anyone that falls matter. Everyone already knows that. The hard part is noticing the right change early enough without turning a resident's room into a control room.
 
 People fall, wander, and get out of bed at night when no one is standing there. Staff are overloaded. Families want reassurance. Residents want dignity. Nobody wants a preventable delay, and nobody wants a bedroom turned into a live broadcast.
 
@@ -31,15 +35,13 @@ The scale is brutal. The [CDC says](https://www.cdc.gov/falls/data-research/inde
 
 That does not mean an AI product gets to swagger into the room claiming it prevents falls. It means the operating problem is serious enough to deserve better product thinking than "add cameras and pray."
 
-The best senior-living version of this category is not about making more people watch more footage. It is about noticing meaningful change without making the resident feel like a subject in a demo.
-
 That is why one detail from a recent [Axios Phoenix story](https://www.axios.com/local/phoenix/2026/02/20/ai-motion-detector-paul-falls-assisted-living) stuck with me. Fellowship Square Mesa had averaged about 20 falls per month among 125 residents before using Helpany's Paul system. The system uses radar-based motion detection, not a camera or audio recorder, and flags changes like gait, instability, posture, and getting out of bed at night.
 
-The interesting part is not the sensor. The interesting part is the handoff.
+The interesting part is not that it avoids cameras, though that matters. The interesting part is what happens after the signal.
 
-If the system notices that someone's movement changed overnight, what does a staff member receive? Is it a useful check-in prompt or another dashboard tile? Does it carry enough context to act? Does it have an owner? Can it be dismissed, corrected, or escalated without creating a fake sense of certainty?
+A sensor can notice that someone's movement changed overnight. That is useful, but it is not the product yet. The product decision starts when the system decides whether to interrupt a staff member, what context to show, who owns the check, and how easy it is to correct the system when it is wrong.
 
-That is where the product lives.
+That is where dignity either survives or gets quietly traded away.
 
 ## A feed is not a workflow
 
@@ -47,21 +49,23 @@ I have a low tolerance for dashboards that make the buyer feel informed and the 
 
 A video feed is not a workflow. A sensor is not a workflow. A risk score is definitely not a workflow if nobody knows what to do with it at 2:17 in the morning when three other things are already going wrong.
 
-The product has to answer a small set of very practical questions.
+The product has to answer a small set of practical questions.
 
 What changed, and why does it matter now? Who owns the next step? What context does that person need?
 
 What happens if the alert is wrong? What happens if no one responds? How does the system remember what happened without letting every incident become a permanent cloud of suspicion?
 
-That is less glamorous than "AI camera." Good. Glamour is usually where product categories go to lose the plot.
+This is less glamorous than "AI camera." Good. Glamour is usually where product categories go to lose the plot.
 
 The humane version is narrow. It does not treat every person like a pending incident. It does not turn family reassurance into remote surveillance. It does not ask staff to stare at screens in case reality happens.
 
 It says: this changed, here is why we think it matters, here is the next human step, and here is the receipt.
 
+That is the product. Not the footage. Not even the model. The handoff between a machine noticing something and a human deciding what to do next.
+
 ## Schools are the warning label
 
-Then you move the same category into schools and the temperature changes fast.
+Senior living shows the humane case for noticing. Schools show why noticing becomes dangerous when the workflow treats a model trigger like an event.
 
 A senior-living alert can still go wrong, but the default use case is care. A school alert can become discipline, police contact, or humiliation.
 
@@ -91,7 +95,7 @@ Do not let the machine turn a messy signal into a consequence before a person ha
 
 If I were evaluating one of these systems, I would care less about the camera demo and more about the interruption contract.
 
-**First, narrow signal.** The system should answer one small question: did movement change enough to justify a check, did someone get out of bed at a risky time, or did an object match a very specific safety condition? The moment the product becomes a general-purpose suspicion engine, it is already drifting.
+**First, narrow signal.** The system should answer one small question. Did movement change enough to justify a check? Did someone get out of bed at a risky time? Did an object match a very specific safety condition? The moment the product becomes a general-purpose suspicion engine, it is already drifting.
 
 **Second, human review before escalation.** Before discipline, police contact, family panic, or anyone treats the alert like reality. Human review after the blast radius is just paperwork with a nicer name.
 
@@ -102,6 +106,8 @@ If I were evaluating one of these systems, I would care less about the camera de
 **Fifth, a kill switch.** If the system cannot be paused, narrowed, or shut down when it behaves badly, it is not ready for high-consequence environments. "Always on" sounds good in a sales deck. It sounds worse when the product is wrong.
 
 **Sixth, scope control.** A tool bought for fall detection should not quietly become behavior scoring. A tool bought for weapons detection should not quietly become attendance tracking, discipline support, or protest monitoring. Scope creep is not a footnote in this category. It is one of the main failure modes.
+
+None of this is flashy. That is the point. High-consequence product work should feel a little boring from the outside because the drama has been removed from the workflow.
 
 ## Better reasons to look
 
