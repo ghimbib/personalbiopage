@@ -1,5 +1,5 @@
 ---
-title: "The Camera Should Not Be the Product"
+title: "Safety AI Needs Better Reasons to Look"
 description: "The humane version of physical safety AI is not a bigger screen. It is a smaller, cleaner, more accountable interruption."
 category: "Product Lessons"
 date: 2026-06-15
