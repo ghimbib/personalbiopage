@@ -1,0 +1,232 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import { absoluteUrl } from '../../../utils/seo';
+
+const title = 'Whirr, Wiggle, Outside! | Bibek Ghimire';
+const description = "When Bruno\u2019s favorite yellow ball gets stuck outside, Riyan, Myra, Anvi, and a very determined blue sock team up for a tiny backyard rescue mission.";
+const canonicalPath = '/books/whirr-wiggle-outside/';
+const coverImage = '/books/whirr-wiggle-outside/pages/front-cover.webp';
+const bookMarkup = "<section class=\"book-page front-cover\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/front-cover.webp\" alt=\"Front cover: Riyan, Myra, Anvi, Bruno, and Captain Vacuum at the open back door starting the yellow-ball rescue mission; pink flag tied to Captain Vacuum; yellow ball visible under patio chair outside; toy robot and tiny cars nearby.\">\n  <div class=\"cover-title\"><h1>Whirr, Wiggle, Outside!</h1><p>The Very Important Rescue Mission</p></div>\n</section><section class=\"book-page helper-page\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/helper-page.webp\" alt=\"Helper introduction page: full-body character lineup with Riyan and toy robot/cars, Myra holding pink ribbon, Anvi pointing outside, Bruno holding one sock, Captain Vacuum ready; lots of clean open space for helper-card text.\">\n  <div class=\"text-panel helper-panel\"><h2>Meet the helpers</h2><div class=\"helper-grid\"><div class=\"helper-card\"><strong>Riyan</strong><span>loved anything with wheels, buttons, beeps, motors, or a very serious hose.</span></div>\n<div class=\"helper-card\"><strong>Myra</strong><span>knew pink could turn a regular idea into an official mission.</span></div>\n<div class=\"helper-card\"><strong>Anvi</strong><span>was small, brave, and almost always pointing toward outside.</span></div>\n<div class=\"helper-card\"><strong>Bruno</strong><span>was a golden-doodle, a goofball, and a professional finder of socks.</span></div></div></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-01.webp\" alt=\"Bruno scratches at the glass back door with one fluffy paw; funny nose pressed to glass; sunny patio visible outside.\">\n  <div class=\"text-panel story-text upper-right\"><span class=\"page-number\">1</span><p>Bruno scratched at the back door with one fluffy paw. Squeak, squeak, squeak went his nose on the glass.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-02.webp\" alt=\"Outside view: Bruno&#x27;s favorite yellow ball stuck under a patio chair in the shade, close but unreachable; Bruno visible at door if composition allows.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">2</span><p>Outside, under the patio chair, his favorite yellow ball waited in the shade. It looked close. It was not close enough.</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-03.webp\" alt=\"Bruno drops one sock on Riyan&#x27;s foot while looking sad and hopeful; Riyan notices the sock and the problem outside.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">3</span><p>Bruno made one sad little whine. Then he dropped a sock on Riyan&#x27;s foot, because Bruno had ideas.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-04.webp\" alt=\"Riyan looks at the ball, sock, and Captain Vacuum with big rescue-mission excitement; Bruno waits hopefully.\">\n  <div class=\"text-panel story-text upper-right\"><span class=\"page-number\">4</span><p>Riyan looked at the ball, the sock, and Captain Vacuum. His eyes got big. &quot;This is a rescue mission.&quot;</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-05.webp\" alt=\"Riyan parks Captain Vacuum at a starting line and lines up one toy robot plus three tiny cars behind it.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">5</span><p>He parked Captain Vacuum at the starting line and lined up one robot and three tiny cars behind it.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-06.webp\" alt=\"Riyan proudly explains the rescue plan; robot scouts, toy cars follow, Captain Vacuum leads; serious kid-engineer energy.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">6</span><p>&quot;Robot scouts. Cars follow. Captain Vacuum drives,&quot; said Riyan. &quot;Nobody panic. I have a machine plan.&quot;</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-07.webp\" alt=\"Captain Vacuum rolls two inches and gently bumps the doormat; one wheel caught by the lumpy mat; Riyan surprised.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">7</span><p>Captain Vacuum rolled two careful inches. Bump. The doormat grabbed one wheel and would not let go.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-08.webp\" alt=\"Toy robot tipped sideways, tiny cars bonked together; Bruno wagging happily as if everything is going wonderfully.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">8</span><p>The robot tipped sideways. The cars bonked together. Bruno wagged like this was all going wonderfully.</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-09.webp\" alt=\"Riyan frowns thoughtfully at the mat and holds Captain Vacuum&#x27;s handle tight, realizing the machine plan needs something.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">9</span><p>Riyan frowned at the mat. &quot;The machine plan needs something,&quot; he said, but he still held the handle tight.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-10.webp\" alt=\"Myra runs in with pink ribbon trailing behind her like a comet; Riyan and Captain Vacuum paused near the mat.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">10</span><p>Myra ran in with pink ribbon trailing behind her like a comet. &quot;I know what missions need!&quot;</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-11.webp\" alt=\"Myra explains that rescue teams need flags; she holds the bright pink ribbon up like an official mission flag.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">11</span><p>&quot;Rescue teams need flags,&quot; said Myra. &quot;If we cannot see the leader, we cannot follow the leader.&quot;</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-12.webp\" alt=\"Myra ties the pink ribbon to Captain Vacuum&#x27;s handle; the pink flag flutters ready-ready-ready; Riyan watches.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">12</span><p>She tied the ribbon to Captain Vacuum&#x27;s handle. The pink flag fluttered: ready, ready, ready.</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-13.webp\" alt=\"Anvi presses both hands on the glass and bounces on her toes, pointing urgently outside.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">13</span><p>Anvi pressed both hands on the glass and bounced on her toes. &quot;There!&quot; she said.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-14.webp\" alt=\"Anvi points around the lumpy mat, past a flower pot, toward the patio chair; show the alternate route clearly.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">14</span><p>She pointed not straight ahead, but around the lumpy mat, past the flower pot, toward the patio chair.</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-15.webp\" alt=\"Riyan compares the stuck machine with Anvi&#x27;s route and realizes the long way is the smart way.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">15</span><p>Riyan blinked. He looked at his stuck machine. Then he looked at Anvi&#x27;s way. &quot;Oh. The long way is the smart way.&quot;</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-16.webp\" alt=\"Riyan slowly drives Captain Vacuum around the mat while Myra walks beside the pink flag and Anvi leads with tiny brave steps.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">16</span><p>This time he drove slowly. Myra walked beside the pink flag. Anvi led with tiny, brave steps.</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-17.webp\" alt=\"Bruno trots behind the rescue team carrying one sock like a very important tool; everyone moving toward patio.\">\n  <div class=\"text-panel story-text upper-right\"><span class=\"page-number\">17</span><p>Bruno trotted behind them carrying the sock like a very important tool. Nobody knew why. Bruno probably did not know why either.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-18.webp\" alt=\"At the patio chair, the yellow ball sits just out of reach while Captain Vacuum&#x27;s hose stretches but stops too soon.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">18</span><p>At the patio chair, the yellow ball sat just out of reach. Captain Vacuum&#x27;s hose stretched and stretched, but stopped too soon.</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-19.webp\" alt=\"Riyan reaches, Myra crouches, Anvi leans, and Bruno sneezes near the patio chair; the yellow ball still does not move.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">19</span><p>Riyan reached. Myra crouched. Anvi leaned. Bruno sneezed. The ball did not move at all.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-20.webp\" alt=\"Bruno drops the sock; it slides under the patio chair and bonks the yellow ball; capture the plonk moment.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">20</span><p>Then Bruno dropped the sock. It slid under the chair and bonked the yellow ball. Plonk!</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-21.webp\" alt=\"The yellow ball rolls out into sunshine; Bruno and the children react with delighted surprise.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">21</span><p>Roll, roll, roll! The ball popped out into the sunshine like it had been waiting for applause.</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-22.webp\" alt=\"Bruno grabs his rescued ball and spins in a happy doodle circle; sock remains under chair looking accidentally proud.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">22</span><p>Bruno grabbed his ball and spun in a happy doodle circle. The sock stayed under the chair, looking proud.</p></div>\n</section><section class=\"book-page story-page odd\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-23.webp\" alt=\"Riyan laughs and recognizes the teamwork: Myra&#x27;s flag, Anvi&#x27;s way, Bruno&#x27;s sock, and his machine; everyone gathered near Captain Vacuum.\">\n  <div class=\"text-panel story-text top\"><span class=\"page-number\">23</span><p>Riyan laughed. &quot;My machine needed Myra&#x27;s flag, Anvi&#x27;s way, and Bruno&#x27;s sock.&quot;</p></div>\n</section><section class=\"book-page story-page even\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/page-24.webp\" alt=\"Joyful ending: the kids chase Bruno and the rescued yellow ball across sunny grass; Captain Vacuum with pink flag visible near patio.\">\n  <div class=\"text-panel story-text\"><span class=\"page-number\">24</span><p>Whirr, beep, pink, wiggle! They chased the rescued ball until the grass tickled their shoes.</p></div>\n</section><section class=\"book-page end-page\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/end-page.webp\" alt=\"End page: Bruno peeking under the patio chair again as if searching for tomorrow&#x27;s adventure; Riyan, Myra, and Anvi amused nearby; Captain Vacuum with pink flag resting safely.\">\n  <div class=\"text-panel end-panel\"><h2>Whirr, wiggle, hooray!</h2><p>Again tomorrow? Bruno was already checking under the chair.</p></div>\n</section><section class=\"book-page back-cover\">\n  <img class=\"page-art\" src=\"/books/whirr-wiggle-outside/pages/back-cover.webp\" alt=\"Back cover: quiet funny aftermath on sunny patio grass: Bruno with his yellow ball, one sock peeking from under patio chair, Captain Vacuum nearby with pink flag; lots of calm open space for blurb/barcode.\">\n  <div class=\"back-copy\"><p>Riyan has a machine plan. Myra has a pink flag. Anvi sees the way. Bruno has... a sock.</p><p>Together, they rescue one very important yellow ball.</p></div>\n</section>";
+const downloads = [
+  { label: 'Download printable PDF', href: '/books/whirr-wiggle-outside/downloads/whirr-wiggle-outside-printable.pdf', detail: 'Best for printing or reading offline' },
+  { label: 'Download EPUB', href: '/books/whirr-wiggle-outside/downloads/whirr-wiggle-outside.epub', detail: 'Fixed-layout ebook for Apple Books and other EPUB readers' },
+];
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${absoluteUrl(canonicalPath)}#webpage`,
+    url: absoluteUrl(canonicalPath),
+    name: title,
+    description,
+    isPartOf: { '@id': 'https://bibekghimire.com/#website' },
+    about: { '@id': `${absoluteUrl(canonicalPath)}#book` },
+    primaryImageOfPage: { '@type': 'ImageObject', url: absoluteUrl(coverImage) },
+    inLanguage: 'en-US',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Book',
+    '@id': `${absoluteUrl(canonicalPath)}#book`,
+    name: 'Whirr, Wiggle, Outside!',
+    headline: 'Whirr, Wiggle, Outside!',
+    description,
+    author: { '@type': 'Person', name: 'Bibek Ghimire', url: 'https://bibekghimire.com/' },
+    publisher: { '@type': 'Person', name: 'Bibek Ghimire' },
+    copyrightHolder: { '@type': 'Person', name: 'Bibek Ghimire' },
+    copyrightYear: 2026,
+    datePublished: '2026-06-16',
+    inLanguage: 'en-US',
+    genre: ['Children’s picture book', 'Family story'],
+    audience: { '@type': 'Audience', audienceType: 'Children ages 3-7' },
+    image: absoluteUrl(coverImage),
+    url: absoluteUrl(canonicalPath),
+    workExample: downloads.map((download) => ({
+      '@type': 'Book',
+      bookFormat: download.href.endsWith('.epub') ? 'https://schema.org/EBook' : 'https://schema.org/Paperback',
+      url: absoluteUrl(download.href),
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} image={coverImage} canonicalPath={canonicalPath} jsonLd={jsonLd}>
+  <Nav />
+  <main id="main-content" class="min-h-screen pt-28 pb-20">
+    <section class="px-6 pb-12">
+      <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div class="overflow-hidden rounded-[2rem] border border-border bg-bg-card shadow-2xl shadow-black/10">
+          <img src={coverImage} alt="Whirr, Wiggle, Outside! cover" class="block w-full" loading="eager" fetchpriority="high" />
+        </div>
+        <div class="space-y-7">
+          <p class="font-mono text-sm uppercase tracking-[0.32em] text-accent">Children’s picture book</p>
+          <div class="space-y-4">
+            <h1 class="text-4xl font-black leading-tight text-text-primary md:text-6xl">Whirr, Wiggle, Outside!</h1>
+            <p class="max-w-2xl text-xl leading-relaxed text-text-secondary">The Very Important Rescue Mission</p>
+          </div>
+          <p class="max-w-2xl text-lg leading-relaxed text-text-secondary">{description}</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#read" class="rounded-full bg-accent px-5 py-3 font-mono text-sm font-bold text-bg transition hover:-translate-y-0.5" data-hover>Read online</a>
+            {downloads.map((download) => (
+              <a href={download.href} class="rounded-full border border-border px-5 py-3 font-mono text-sm font-bold text-text-primary transition hover:-translate-y-0.5 hover:border-accent hover:text-accent" data-hover download>
+                {download.label}
+              </a>
+            ))}
+          </div>
+          <dl class="grid gap-4 text-sm text-text-secondary sm:grid-cols-3">
+            <div class="rounded-2xl border border-border bg-bg-card p-4"><dt class="font-mono text-xs uppercase tracking-widest text-text-muted">Author</dt><dd class="mt-1 font-semibold text-text-primary">Bibek Ghimire</dd></div>
+            <div class="rounded-2xl border border-border bg-bg-card p-4"><dt class="font-mono text-xs uppercase tracking-widest text-text-muted">Age</dt><dd class="mt-1 font-semibold text-text-primary">3–7</dd></div>
+            <div class="rounded-2xl border border-border bg-bg-card p-4"><dt class="font-mono text-xs uppercase tracking-widest text-text-muted">Format</dt><dd class="mt-1 font-semibold text-text-primary">Online, PDF, EPUB</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="read" class="px-4 py-12 sm:px-6">
+      <div class="mx-auto max-w-5xl space-y-6">
+        <div class="flex flex-col gap-4 rounded-3xl border border-border bg-bg-card p-5 md:flex-row md:items-center md:justify-between">
+          <div>
+            <h2 class="text-2xl font-black text-text-primary">Read the book</h2>
+            <p class="mt-1 text-sm text-text-muted">Scroll page by page. Use the PDF if you want a print-ready copy.</p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {downloads.map((download) => (
+              <a href={download.href} class="rounded-full border border-border px-4 py-2 font-mono text-xs font-bold text-text-secondary transition hover:border-accent hover:text-accent" data-hover download>{download.label}</a>
+            ))}
+          </div>
+        </div>
+        <div class="whirr-reader" set:html={bookMarkup} />
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style is:global>
+  .whirr-reader {
+    --book-page: min(92vw, 760px);
+    --safe: clamp(1rem, 4vw, 2.1rem);
+    --ink: #27313d;
+    --paper: #fffaf2;
+    color: var(--ink);
+    font-family: Avenir, Nunito, "Trebuchet MS", Arial, sans-serif;
+  }
+  .whirr-reader .book-page {
+    position: relative;
+    width: var(--book-page);
+    height: var(--book-page);
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    border-radius: clamp(1rem, 3vw, 1.75rem);
+    background: var(--paper);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
+  }
+  .whirr-reader .page-art {
+    position: absolute;
+    inset: -1px;
+    width: calc(100% + 2px);
+    height: calc(100% + 2px);
+    object-fit: cover;
+    object-position: center center;
+    background: var(--paper);
+  }
+  .whirr-reader .text-panel {
+    position: absolute;
+    left: var(--safe);
+    right: var(--safe);
+    bottom: var(--safe);
+    border: 2px solid rgba(255, 255, 255, 0.78);
+    border-radius: clamp(1rem, 3vw, 1.6rem);
+    background: rgba(255, 250, 242, 0.84);
+    box-shadow: 0 8px 24px rgba(50, 30, 20, 0.16);
+    padding: clamp(0.75rem, 2.1vw, 1.2rem) clamp(0.9rem, 2.6vw, 1.55rem);
+    backdrop-filter: blur(2px);
+  }
+  .whirr-reader .text-panel.top { top: var(--safe); bottom: auto; }
+  .whirr-reader .text-panel.upper-left { top: var(--safe); right: 42%; bottom: auto; }
+  .whirr-reader .text-panel.upper-right { top: var(--safe); left: 38%; bottom: auto; }
+  .whirr-reader .text-panel.lower-left { right: 42%; }
+  .whirr-reader .text-panel.lower-right { left: 42%; }
+  .whirr-reader .story-text p {
+    margin: 0;
+    font-size: clamp(0.95rem, 2.55vw, 1.52rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: 0.005em;
+  }
+  .whirr-reader .page-number {
+    position: absolute;
+    right: 0.75rem;
+    top: 0.55rem;
+    color: rgba(39, 49, 61, 0.42);
+    font-size: clamp(0.55rem, 1.25vw, 0.78rem);
+    font-weight: 900;
+  }
+  .whirr-reader .cover-title {
+    position: absolute;
+    left: 7%;
+    right: 7%;
+    top: 6%;
+    text-align: center;
+    color: #26313e;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.8);
+  }
+  .whirr-reader .cover-title h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 8.6vw, 4.85rem);
+    font-weight: 950;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+  .whirr-reader .cover-title p {
+    display: inline-block;
+    margin: 0.9rem 0 0;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 250, 242, 0.86);
+    color: #9a3a73;
+    font-size: clamp(0.85rem, 2.5vw, 1.45rem);
+    font-weight: 900;
+  }
+  .whirr-reader .helper-panel { top: var(--safe); bottom: auto; }
+  .whirr-reader .helper-panel h2,
+  .whirr-reader .end-panel h2 {
+    margin: 0 0 0.65rem;
+    font-size: clamp(1.25rem, 4.4vw, 2.2rem);
+    line-height: 1;
+  }
+  .whirr-reader .helper-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(0.45rem, 1.5vw, 0.8rem); }
+  .whirr-reader .helper-card {
+    border-radius: 0.9rem;
+    background: rgba(255, 255, 255, 0.72);
+    padding: clamp(0.45rem, 1.5vw, 0.8rem);
+    font-size: clamp(0.62rem, 1.8vw, 1rem);
+    line-height: 1.2;
+  }
+  .whirr-reader .helper-card strong { display: block; color: #9a3a73; font-size: 1.15em; margin-bottom: 0.15rem; }
+  .whirr-reader .end-panel { top: var(--safe); bottom: auto; text-align: center; }
+  .whirr-reader .end-panel p { margin: 0.25rem 0 0; font-size: clamp(1rem, 3.8vw, 2rem); font-weight: 800; line-height: 1.15; }
+  .whirr-reader .back-copy {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    bottom: 8%;
+    border-radius: 1.5rem;
+    background: rgba(255, 250, 242, 0.86);
+    padding: clamp(0.9rem, 3vw, 1.6rem);
+    text-align: center;
+    font-size: clamp(1rem, 3.4vw, 1.85rem);
+    font-weight: 800;
+    line-height: 1.18;
+    box-shadow: 0 8px 24px rgba(50, 30, 20, 0.14);
+  }
+  .whirr-reader .back-copy p { margin: 0.25rem 0; }
+  @media (max-width: 640px) {
+    .whirr-reader .text-panel.upper-left,
+    .whirr-reader .text-panel.upper-right,
+    .whirr-reader .text-panel.lower-left,
+    .whirr-reader .text-panel.lower-right { left: var(--safe); right: var(--safe); }
+  }
+</style>
