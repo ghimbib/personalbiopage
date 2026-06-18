@@ -4,7 +4,7 @@ export type ImageMeta = {
 };
 
 export const IMAGE_META: Record<string, ImageMeta> = {
-  '/images/bibek-linkedin.png': { width: 400, height: 400 },
+  '/images/bibek-headshot-20260618.png': { width: 400, height: 400 },
   '/images/blog/agent-failure-modes/hero-banner.png': { width: 1536, height: 1024 },
   '/images/blog/agentic-orchestration-banner.png': { width: 2500, height: 1000 },
   '/images/blog/ai-governance-guardrails/hero-banner.jpg': { width: 1536, height: 1024 },

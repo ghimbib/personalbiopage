@@ -5,7 +5,7 @@ export const DEFAULT_TITLE = 'Bibek Ghimire | Product, Growth & Analytics in Tec
 export const DEFAULT_DESCRIPTION =
   'Product/operator across technical spaces: product, analytics, marketing, CRM/reporting, campaigns, and program work. Best where messy systems need signal, structure, and shipped work.';
 
-export const DEFAULT_IMAGE = '/images/bibek-linkedin.png';
+export const DEFAULT_IMAGE = '/images/bibek-headshot-20260618.png';
 
 export const PERSON_ID = `${SITE_URL}/#person`;
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
