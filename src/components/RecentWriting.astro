@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+
+const allPosts = (await getCollection('blog'))
+  .filter((post) => !post.data.draft && !post.data.hidden)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+// One post per category so the homepage shows range, newest first.
+// Falls back to overall-latest posts if fewer than 3 categories have posts.
+const categoryOrder = ['Product Lessons', 'AI Systems', 'Personal Stories'];
+const picks = categoryOrder
+  .map((category) => allPosts.find((post) => post.data.category === category))
+  .filter((post) => post !== undefined);
+const posts = [...picks, ...allPosts.filter((post) => !picks.includes(post))]
+  .slice(0, 3)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+---
+
+<section id="writing" class="py-20 sm:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <!-- Section label -->
+    <div class="section-label" data-animate>
+      <span class="section-number">06</span>
+      <span class="section-line"></span>
+      <span class="section-label-text">Writing</span>
+    </div>
+
+    <h2 class="text-3xl md:text-4xl font-bold mt-4 mb-4 text-center sm:text-left" data-animate data-delay="100">
+      Recent writing<span class="gradient-text">.</span>
+    </h2>
+    <p class="text-text-secondary text-lg mb-12 max-w-2xl text-center sm:text-left" data-animate data-delay="150">
+      How I think about products, AI systems, and the workflows behind them. The thinking behind the work, in public.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      {posts.map((post, i) => (
+        <a
+          href={`/blog/${post.id.replace(/\.md$/, '')}/`}
+          class="group block rounded-xl border border-border bg-bg-card p-6 hover:border-accent transition-all"
+          data-animate
+          data-delay={String(200 + i * 100)}
+          data-hover
+        >
+          <div class="flex items-center gap-3 text-xs font-mono text-text-muted mb-4">
+            <span class="text-accent">{post.data.category}</span>
+            <span>·</span>
+            <time datetime={post.data.date.toISOString().split('T')[0]}>{formatDate(post.data.date)}</time>
+          </div>
+          <h3 class="text-lg font-bold leading-snug group-hover:text-accent transition-colors">
+            {post.data.title}
+          </h3>
+          <p class="text-text-secondary text-sm leading-relaxed mt-3 line-clamp-3">
+            {post.data.description}
+          </p>
+          <span class="inline-flex items-center gap-2 text-sm text-accent font-mono mt-4">
+            Read post
+            <span class="group-hover:translate-x-1 transition-transform">→</span>
+          </span>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-10 text-center sm:text-left" data-animate data-delay="500">
+      <a
+        href="/blog"
+        class="inline-flex items-center gap-2 px-5 py-3 border border-border text-text-secondary rounded-lg hover:border-accent hover:text-accent transition-all text-sm sm:text-base"
+        data-hover
+      >
+        <span>All posts</span>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
+</section>
