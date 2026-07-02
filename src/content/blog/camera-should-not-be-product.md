@@ -9,6 +9,12 @@ tags: ["AI", "ProductManagement", "SafetyTech"]
 draft: false
 ---
 
+In October 2025, an AI security system at a Maryland high school flagged a possible firearm and set an escalation in motion. A student ended up searched and handcuffed. The firearm was a bag of Doritos.
+
+Here is the detail that matters: humans had already reviewed the alert and canceled it. The handcuffs happened anyway.
+
+Hold that thought.
+
 I recently talked with a company building AI safety tools for senior living and schools, and one word kept bothering me: camera.
 
 Not because cameras are always wrong. Sometimes seeing sooner matters. In senior living, a delayed check after a fall can change someone's life. In a school, a delayed response to a real threat can be catastrophic.
@@ -17,7 +23,11 @@ But "camera" is a dangerous word to build around because it makes the product fe
 
 That skips the part where the product actually succeeds or fails.
 
-A useful safety system does not just say, "I saw something." It has to say: this changed, here is why it matters, here is who needs to check, here is what they should know, and here is what happens if I am wrong.
+The interview left me with a cleaner way to say it. The AI is the engine. The model that watches a hallway and guesses "firearm," or watches a room and guesses "fall," is real work and real math, but nobody lives with the engine. People live with the product built around it: the workflow that decides who gets interrupted, with what context, with what power to say no, and with what blast radius when the model is wrong.
+
+Nobody judges a car by revving the engine in the parking lot. You judge the brakes, the steering, what happens in a crash. Safety AI keeps getting demoed as an engine and deployed as a product, and the gap between those two is where people get hurt.
+
+A useful safety system does not just say, "I saw something." It has to say: this changed, here is why it matters, here is who needs to check, here is what they should know, and here is what happens if I am wrong. Call that the interruption contract: the terms under which a machine is allowed to interrupt a human.
 
 That is the part I care about. Not the watching. The handoff.
 
@@ -71,11 +81,11 @@ A senior-living alert can still go wrong, but the default use case is care. A sc
 
 That does not mean schools have fake safety problems. It means the product cannot be allowed to confuse "something triggered the model" with "something dangerous happened."
 
-The cleanest example is the Doritos incident. [TechCrunch reported](https://techcrunch.com/2025/10/25/high-schools-ai-security-system-confuses-doritos-bag-for-a-possible-firearm/) that an AI security system at a Maryland high school flagged a bag of chips as a possible firearm. Security reportedly reviewed and canceled the alert, but the escalation chain still reached the school resource officer. The student was searched and handcuffed.
+The cleanest example is the one this piece opened with. [TechCrunch reported](https://techcrunch.com/2025/10/25/high-schools-ai-security-system-confuses-doritos-bag-for-a-possible-firearm/) the sequence: an AI security system at a Maryland high school flagged a bag of chips as a possible firearm. Security reviewed and canceled the alert, but the escalation chain still reached the school resource officer. The student was searched and handcuffed anyway.
 
 That is not a tiny edge case. That is the product, exposed.
 
-If a canceled alert can still travel far enough to put a student in handcuffs, the system did not merely have a false positive. The workflow failed.
+If a canceled alert can still travel far enough to put a student in handcuffs, the model is not what failed. Models misread things; that is exactly why the workflow exists. The workflow failed.
 
 This is where the phrase "human review" starts to annoy me. Human review is not magic dust. It only matters if it happens before the consequence. If the alert has already scared the room, routed to the wrong person, or pushed people toward escalation, the human is not reviewing. The human is cleaning up after the product.
 
@@ -118,6 +128,8 @@ In senior living, the best version respects the fact that people need care witho
 In schools, the best version may often be restraint. Smaller scope. Fewer automated consequences. More proof before escalation. More humility about what the system does not know.
 
 The camera is the easy thing to sell because everyone understands watching.
+
+The engine will keep getting better. Engines always do. But better detection would not have kept that student out of handcuffs, because the alert was already canceled. Accuracy was not the problem. The product was.
 
 The harder product is interruption: rare enough to trust, specific enough to act on, and accountable enough to survive being wrong.
 
